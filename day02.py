@@ -46,7 +46,6 @@ def p2():
         start, end = id_range.split("-")
         for product_id in range(int(start), int(end) + 1):
             if is_repeating_id(str(product_id)):
-                print(product_id)
                 counter += product_id
     return counter
 
