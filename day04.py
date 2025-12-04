@@ -44,15 +44,15 @@ def p1():
 
 def p2():
     rows = read_file_as_list("input/day04/p1")
-    accessable_rolls = 0
+    accessible_rolls = 0
     while True:
         count, rows = count_accessible_rolls(rows)
         if count == 0:
             break
         else:
-            accessable_rolls += count
+            accessible_rolls += count
 
-    return accessable_rolls
+    return accessible_rolls
 
 
 if __name__ == "__main__":
