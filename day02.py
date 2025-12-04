@@ -1,5 +1,6 @@
 from util.text import read_file_as_list
 
+
 def is_mirrored_id(product_id: str) -> bool:
     # Can't be repeating if it's odd
     if len(product_id) % 2 != 0:
@@ -9,6 +10,7 @@ def is_mirrored_id(product_id: str) -> bool:
     left_side = product_id[:mid]
     right_side = product_id[mid:]
     return left_side == right_side
+
 
 def is_repeating_id(product_id: str, pattern_length: int = 1) -> bool:
     id_length = len(product_id)
@@ -22,10 +24,11 @@ def is_repeating_id(product_id: str, pattern_length: int = 1) -> bool:
 
     pattern = product_id[:pattern_length]
     for i in range(0, id_length, pattern_length):
-        if product_id[i:i + pattern_length] != pattern:
+        if product_id[i : i + pattern_length] != pattern:
             return is_repeating_id(product_id, pattern_length + 1)
 
     return True
+
 
 def p1():
     ids = read_file_as_list("input/day02/p1")
@@ -38,6 +41,7 @@ def p1():
                 counter += product_id
     return counter
 
+
 def p2():
     ids = read_file_as_list("input/day02/p1")
     id_ranges = ids[0].split(",")
@@ -48,6 +52,7 @@ def p2():
             if is_repeating_id(str(product_id)):
                 counter += product_id
     return counter
+
 
 if __name__ == "__main__":
     print(p2())

@@ -1,5 +1,6 @@
 from util.text import read_file_as_list
 
+
 def p1():
     lines = read_file_as_list("input/day01/p1")
     location = 50
@@ -16,6 +17,7 @@ def p1():
             zero_counter += 1
 
     return zero_counter
+
 
 def p2():
     lines = read_file_as_list("input/day01/p1")

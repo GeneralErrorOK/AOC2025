@@ -11,11 +11,12 @@ def get_best_combination(bank: str) -> str:
             h1 = int(jolt_rating)
             i1 = index
     h2 = 0
-    for index, jolt_rating in enumerate(bank[i1+1:]):
+    for index, jolt_rating in enumerate(bank[i1 + 1 :]):
         if int(jolt_rating) > h2:
             h2 = int(jolt_rating)
 
     return f"{h1}{h2}"
+
 
 def get_highest_jolt_rating(bank: str, length: int, combination: str = "") -> str:
     if length == 0:
@@ -27,7 +28,7 @@ def get_highest_jolt_rating(bank: str, length: int, combination: str = "") -> st
     if length == 1:
         clipped_bank = bank
     else:
-        clipped_bank = bank[:-length+1]
+        clipped_bank = bank[: -length + 1]
 
     highest = 0
     index = 0
@@ -38,8 +39,7 @@ def get_highest_jolt_rating(bank: str, length: int, combination: str = "") -> st
 
     combination += str(highest)
 
-    return get_highest_jolt_rating(bank[index+1:], length - 1, combination)
-
+    return get_highest_jolt_rating(bank[index + 1 :], length - 1, combination)
 
 
 def p1():
@@ -52,6 +52,7 @@ def p1():
 
     return sum_voltage
 
+
 def p2():
     bat_banks = read_file_as_list("input/day03/p1")
     sum_voltage = 0
@@ -61,6 +62,7 @@ def p2():
         sum_voltage += int(best_combination)
 
     return sum_voltage
+
 
 if __name__ == "__main__":
     print(p2())
