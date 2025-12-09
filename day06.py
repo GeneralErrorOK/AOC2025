@@ -14,13 +14,9 @@ def p1():
 
     for i, operation in enumerate(operations):
         if operation == "*":
-            grand_total += (
-                int(first[i]) * int(second[i]) * int(third[i]) * int(fourth[i])
-            )
+            grand_total += int(first[i]) * int(second[i]) * int(third[i]) * int(fourth[i])
         if operation == "+":
-            grand_total += (
-                int(first[i]) + int(second[i]) + int(third[i]) + int(fourth[i])
-            )
+            grand_total += int(first[i]) + int(second[i]) + int(third[i]) + int(fourth[i])
 
     return grand_total
 
