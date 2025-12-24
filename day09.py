@@ -1,4 +1,4 @@
-from shapely import LineString, Polygon, Point
+from shapely import Polygon, Point
 
 from util.text import read_file_as_list
 
@@ -34,7 +34,10 @@ def p1() -> int:
     squares.sort()
     return squares[-1]
 
-def filter_tiles(tiles: list[tuple[int, int]], line_segments: list[Point]) -> list[tuple[tuple[int, int], tuple[int, int]]]:
+
+def filter_tiles(
+    tiles: list[tuple[int, int]], line_segments: list[Point]
+) -> list[tuple[tuple[int, int], tuple[int, int]]]:
     super_polygon = Polygon(line_segments)
     squares_that_fit = []
     for t1 in tiles:
@@ -63,8 +66,6 @@ def p2() -> int:
     dimensions = [sq.area for sq in fit]
     dimensions.sort()
     return dimensions[-1]
-
-
 
 
 if __name__ == "__main__":
